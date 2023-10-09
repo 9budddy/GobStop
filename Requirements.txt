@@ -1,0 +1,20 @@
+Single Player Side Scrolling Platform Game
+
+Complete these to complete the game.
+Animations: ☑
+	Player: ☑
+		idle, running, jump ☑
+		facing direction of movements ☑	
+	Fire: ☑
+	Sawblade: Spinning ☑
+	
+Physics: 
+	Ice Platform: ☑
+	
+
+
+
+For Making game harder...
+Put items in a List/Vector and toggle them on for the next run... etc.
+Faster Moving platforms(maybe)
+More Gobs thrown per section
