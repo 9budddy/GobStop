@@ -65,9 +65,7 @@ public class PlayerMovementScript : MonoBehaviour
         }
         if (playerState.isOnIce)
         {
-            icePhysics();
- 
-            
+            icePhysics();   
         }
         else
         {
@@ -130,7 +128,7 @@ public class PlayerMovementScript : MonoBehaviour
                 }
             }
             else if (oldXDirection < 0)
-            {
+            { 
                 if (rb.velocity.x < 0)
                 {
                     rb.AddForce(new Vector2(-oldXDirection * MOVE_SPEED * 0.05f, 0));
