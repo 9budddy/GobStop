@@ -6,6 +6,14 @@ TagManager:
   tags:
   - Ground
   - Ice
+  - Coin
+  - Trap
+  - Gob
+  - Saw
+  - Fire
+  - Glue
+  - Wings
+  - Bouncy
   layers:
   - Default
   - TransparentFX
@@ -13,7 +21,7 @@ TagManager:
   - Player
   - Water
   - UI
-  - 
+  - Gob
   - 
   - 
   - 
@@ -40,6 +48,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: BackgroundBackground
+    uniqueID: 4148360341
+    locked: 0
   - name: Background
     uniqueID: 3171381881
     locked: 0
@@ -51,4 +62,7 @@ TagManager:
     locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: UI
+    uniqueID: 3536904893
     locked: 0
