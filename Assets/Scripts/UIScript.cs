@@ -24,6 +24,38 @@ public class UIScript : MonoBehaviour
         {
             return "Blueberry";
         }
+        else if (playerState.gobPosition == 3)
+        {
+            return "Red Velvet";
+        }
+        else if (playerState.gobPosition == 4)
+        {
+            return "StrawBerry";
+        }
+        else if (playerState.gobPosition == 5)
+        {
+            return "Orange";
+        }
+        else if (playerState.gobPosition == 6)
+        {
+            return "Pumpkin";
+        }
+        else if (playerState.gobPosition == 7)
+        {
+            return "Carrot";
+        }
+        else if (playerState.gobPosition == 8)
+        {
+            return "Banana";
+        }
+        else if (playerState.gobPosition == 9)
+        {
+            return "Chocolate";
+        }
+        else if (playerState.gobPosition == 10)
+        {
+            return "Carolina Reaper";
+        }
         else
         {
             return "Neopolitan";

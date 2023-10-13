@@ -67,12 +67,8 @@ public class PlayerCollision : MonoBehaviour
         {
             if (playerState.level == 1 && playerState.coins == 1)
             {
-                playerState.level = 2;
-                playerState.coinsRequired = 2;
-                playerState.gobPosition = 2;
-                playerState.professorPosition = 2;
 
-                setExtras();
+                setExtras(2);
                 
                 AudioManager.instance.Play("purchase");
                 Destroy(collision.gameObject);
@@ -81,21 +77,76 @@ public class PlayerCollision : MonoBehaviour
             }
             else if (playerState.level == 2 && playerState.coins == 2)
             {
-                playerState.level = 3;
-                playerState.coinsRequired = 3;
-                playerState.gobPosition = 3;
-                playerState.professorPosition = 3;
 
-                setExtras();
+                setExtras(3);
                
+                AudioManager.instance.Play("purchase");
+                Destroy(collision.gameObject);
+            }
+            else if (playerState.level == 3 && playerState.coins == 3)
+            {
+
+                setExtras(4);
+
+                AudioManager.instance.Play("purchase");
+                Destroy(collision.gameObject);
+            }
+            else if (playerState.level == 4 && playerState.coins == 4)
+            {
+
+                setExtras(5);
+
+                AudioManager.instance.Play("purchase");
+                Destroy(collision.gameObject);
+            }
+            else if (playerState.level == 5 && playerState.coins == 5)
+            {
+
+                setExtras(6);
+
+                AudioManager.instance.Play("purchase");
+                Destroy(collision.gameObject);
+            }
+            else if (playerState.level == 6 && playerState.coins == 6)
+            {
+
+                setExtras(7);
+
+                AudioManager.instance.Play("purchase");
+                Destroy(collision.gameObject);
+            }
+            else if (playerState.level == 7 && playerState.coins == 7)
+            {
+
+                setExtras(8);
+
+                AudioManager.instance.Play("purchase");
+                Destroy(collision.gameObject);
+            }
+            else if (playerState.level == 8 && playerState.coins == 8)
+            {
+                setExtras(9);
+
+                AudioManager.instance.Play("purchase");
+                Destroy(collision.gameObject);
+            }
+            else if (playerState.level == 9 && playerState.coins == 9)
+            {
+                setExtras(10);
+
                 AudioManager.instance.Play("purchase");
                 Destroy(collision.gameObject);
             }
         }
     }
 
-    private void setExtras()
+    private void setExtras(int num)
     {
+        playerState.level = num;
+        playerState.coinsRequired = num;
+        playerState.gobPosition = num;
+        playerState.professorPosition = num;
+
         playerState.coins = 0;
         Destroy(playerState.spawnerObject);
         foreach (GameObject gob in playerState.gobs)

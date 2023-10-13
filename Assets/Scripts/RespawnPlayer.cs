@@ -54,27 +54,66 @@ public class RespawnPlayer : MonoBehaviour
         isRespawn = true;
         respawnTimer = 0.0f;
         float x = Player.transform.position.x;
-        Vector2 respawnPlayerPos;
-        float endLevelX;
+        Vector2 respawnPlayerPos = new Vector2(0,0);
 
         if (playerState.level == 1)
         {
-            endLevelX = 25f;
             respawnPlayerPos = new Vector2(-4.45f, -2.45f);
 
         } 
         else if (playerState.level == 2)
         {
-            endLevelX = 58f;
+
             respawnPlayerPos = new Vector2(28.45f, -2.45f);
         }
+        else if (playerState.level == 3)
+        {
+
+            respawnPlayerPos = new Vector2(63.45f, -2.45f);
+        }
+        else if (playerState.level == 4)
+        {
+
+            respawnPlayerPos = new Vector2(103.45f, -2.45f);
+        }
+        else if (playerState.level == 5)
+        {
+
+            respawnPlayerPos = new Vector2(137.45f, -2.45f);
+        }
+        else if (playerState.level == 6)
+        {
+
+            respawnPlayerPos = new Vector2(176.45f, -2.45f);
+        }
+        else if (playerState.level == 7)
+        {
+
+            respawnPlayerPos = new Vector2(210.45f, -2.45f);
+        }
+        else if (playerState.level == 8)
+        {
+
+            //respawnPlayerPos = new Vector2(103.45f, -2.45f);
+        }
+        else if (playerState.level == 9)
+        {
+
+            //respawnPlayerPos = new Vector2(103.45f, -2.45f);
+        }
+        else if (playerState.level == 10)
+        {
+
+            //respawnPlayerPos = new Vector2(103.45f, -2.45f);
+        }
+
         else
         {
-            endLevelX = -20f;
+
             respawnPlayerPos = new Vector2(-4.45f, -2.45f);
         }
 
-        if (x < endLevelX)
+
         {
             playerMovementScript.setTimers();
             Destroy(playerState.spawnerObject);

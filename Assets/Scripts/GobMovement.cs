@@ -6,6 +6,7 @@ public class GobMovement : MonoBehaviour
 {
     Rigidbody2D rb;
     const float MOVE_SPEED = 2.5f;
+    [SerializeField] PlayerState playerState;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -14,7 +15,15 @@ public class GobMovement : MonoBehaviour
 
     void Update()
     {
-        rb.velocity = new Vector2(-1 * MOVE_SPEED, rb.velocity.y);
+        if (playerState.level == 3 ||
+            playerState.level == 4)
+        {
+            rb.velocity = new Vector2(1.5f * MOVE_SPEED, rb.velocity.y);
+        }
+        else
+        {
+            rb.velocity = new Vector2(-1 * MOVE_SPEED, rb.velocity.y);
+        }
         if (transform.position.y < -7.5f)
         {
             Destroy(gameObject);

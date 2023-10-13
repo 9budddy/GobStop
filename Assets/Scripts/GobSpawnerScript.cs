@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -18,7 +19,36 @@ public class GobSpawnerScript : MonoBehaviour
         {
             GameObject gob = Instantiate(GobPrefab, getPos(), Quaternion.identity);
             playerState.gobs.Add(gob);
-            yield return new WaitForSeconds(7f);
+            yield return new WaitForSeconds(getWaitSeconds());
+        }
+    }
+
+    private float getWaitSeconds()
+    {
+        if (playerState.gobPosition == 1 ||
+            playerState.gobPosition == 2)
+        {
+            return 7f;
+        }
+        else if (playerState.gobPosition == 3 ||
+                playerState.gobPosition == 5)
+        {
+            return 5f;
+        }
+        else if (playerState.gobPosition == 4 ||
+                playerState.gobPosition == 6) 
+        {
+            return 3f;
+        }
+        //183.6 -0.5
+        //185.5 -1.5
+        //197.5  2.5
+        //186.5 4.5
+        //180.5 11.5
+        //186.5 13.5
+        else
+        {
+            return 7f;
         }
     }
 
@@ -31,6 +61,38 @@ public class GobSpawnerScript : MonoBehaviour
         else if (playerState.gobPosition == 2)
         {
             return new Vector2(42.5f, 12.5f);
+        }
+        else if (playerState.gobPosition == 3)
+        {
+            return new Vector2(63.5f, 6.5f);
+        }
+        else if (playerState.gobPosition == 4)
+        {
+            return new Vector2(103.5f, 13.5f);
+        }
+        else if (playerState.gobPosition == 5)
+        {
+            return new Vector2(161.5f, 30.5f);
+        }
+        else if (playerState.gobPosition == 6)
+        {
+            return new Vector2(194.5f, 15.5f);
+        }
+        else if (playerState.gobPosition == 7)
+        {
+            return new Vector2(0, 0);
+        }
+        else if (playerState.gobPosition == 8)
+        {
+            return new Vector2(0, 0);
+        }
+        else if (playerState.gobPosition == 9)
+        {
+            return new Vector2(0, 0);
+        }
+        else if (playerState.gobPosition == 10)
+        {
+            return new Vector2(0, 0);
         }
         else
         {

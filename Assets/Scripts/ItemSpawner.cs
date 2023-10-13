@@ -15,9 +15,9 @@ public class ItemSpawner : MonoBehaviour
     private float bounceTimer = 0.0f;
     private float wingsTimer = 0.0f;
 
-    private Vector2 coin1 = new Vector2(-1.5f, 2.5f);
-    private Vector2 coin2 = new Vector2(50.5f, 0.5f);
-    private Vector2 coin3 = new Vector2(29.5f, 5.5f);
+    [SerializeField] List<Vector2> coins = new List<Vector2>();
+
+
     void Start()
     {
         spawnCoins();
@@ -25,9 +25,11 @@ public class ItemSpawner : MonoBehaviour
 
     private void spawnCoins()
     {
-        Instantiate(CoinPrefab, coin1, Quaternion.identity);
-        Instantiate(CoinPrefab, coin2, Quaternion.identity);
-        Instantiate(CoinPrefab, coin3, Quaternion.identity);
+        foreach (Vector2 coin in coins)
+        {
+            Instantiate(CoinPrefab, coin, Quaternion.identity);
+        }
+        
     }
 
     public void spawnImmediate()
