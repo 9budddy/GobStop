@@ -20,6 +20,15 @@ public class GobMovement : MonoBehaviour
         {
             rb.velocity = new Vector2(1.5f * MOVE_SPEED, rb.velocity.y);
         }
+        else if (playerState.level == 7)
+        {
+            rb.velocity = new Vector2(2f * MOVE_SPEED, rb.velocity.y);
+        }
+        else if (playerState.level == 8 ||
+            playerState.level == 9)
+        {
+            rb.velocity = new Vector2(-2f * MOVE_SPEED, rb.velocity.y);
+        }
         else
         {
             rb.velocity = new Vector2(-1 * MOVE_SPEED, rb.velocity.y);

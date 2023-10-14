@@ -8,6 +8,7 @@ public class MovingTraps1 : MonoBehaviour
 {
 
     [SerializeField] private GameObject[] points;
+    [SerializeField] private int targetPoint;
     [SerializeField] private float speed = 0f;
 
     private Rigidbody2D rb;
@@ -16,6 +17,7 @@ public class MovingTraps1 : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        i = targetPoint;
     }
 
     void Update()
@@ -41,6 +43,10 @@ public class MovingTraps1 : MonoBehaviour
             if (i != points.Length - 1)
             {
                 Gizmos.DrawLine(points[i].transform.position, points[i + 1].transform.position);
+            }
+            else
+            {
+                Gizmos.DrawLine(points[i].transform.position, points[0].transform.position);
             }
         }
     }

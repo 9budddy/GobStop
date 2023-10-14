@@ -22,7 +22,6 @@ public class GobSpawnerScript : MonoBehaviour
             yield return new WaitForSeconds(getWaitSeconds());
         }
     }
-
     private float getWaitSeconds()
     {
         if (playerState.gobPosition == 1 ||
@@ -35,17 +34,20 @@ public class GobSpawnerScript : MonoBehaviour
         {
             return 5f;
         }
+        else if (playerState.gobPosition == 9)
+        {
+            return 4f;
+        }
         else if (playerState.gobPosition == 4 ||
-                playerState.gobPosition == 6) 
+                playerState.gobPosition == 6 ||
+                playerState.gobPosition == 8) 
         {
             return 3f;
         }
-        //183.6 -0.5
-        //185.5 -1.5
-        //197.5  2.5
-        //186.5 4.5
-        //180.5 11.5
-        //186.5 13.5
+        else if (playerState.gobPosition == 7)
+        {
+            return 2f;
+        }
         else
         {
             return 7f;
@@ -80,15 +82,15 @@ public class GobSpawnerScript : MonoBehaviour
         }
         else if (playerState.gobPosition == 7)
         {
-            return new Vector2(0, 0);
+            return new Vector2(212.5f, 14.5f);
         }
         else if (playerState.gobPosition == 8)
         {
-            return new Vector2(0, 0);
+            return new Vector2(274.5f, 3.5f);
         }
         else if (playerState.gobPosition == 9)
         {
-            return new Vector2(0, 0);
+            return new Vector2(309.5f, 14.5f);
         }
         else if (playerState.gobPosition == 10)
         {

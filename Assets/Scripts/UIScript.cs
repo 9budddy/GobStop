@@ -2,15 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class UIScript : MonoBehaviour
 {
     [SerializeField] private PlayerState playerState;
     [SerializeField] private TextMeshProUGUI CoinsForGobs;
 
-
     void Update()
     {
+
         CoinsForGobs.text = getGobName() + "\n" + playerState.coins.ToString() + "/" + playerState.coinsRequired.ToString() + " Coins";
     }
 

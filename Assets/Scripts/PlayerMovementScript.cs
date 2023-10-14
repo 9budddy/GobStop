@@ -184,17 +184,25 @@ public class PlayerMovementScript : MonoBehaviour
 
             if (xDirection < 1)
             {
-                if (rb.velocity.x > MOVE_SPEED * oldXDirection)
+                if (rb.velocity.x > (MOVE_SPEED-0.2f) * oldXDirection)
                 {
                     rb.AddForce(new Vector2(oldXDirection * MOVE_SPEED * 0.3f, 0));
+                    if (rb.velocity.x > MOVE_SPEED)
+                    {
+                        rb.velocity = new Vector2(MOVE_SPEED*oldXDirection, rb.velocity.y);
+                    }
                 }
 
             }
             else
             {
-                if (rb.velocity.x < MOVE_SPEED * oldXDirection)
+                if (rb.velocity.x < (MOVE_SPEED - 0.2f) * oldXDirection)
                 {
                     rb.AddForce(new Vector2(oldXDirection * MOVE_SPEED * 0.3f, 0));
+                    if (rb.velocity.x > MOVE_SPEED)
+                    {
+                        rb.velocity = new Vector2(MOVE_SPEED * oldXDirection, rb.velocity.y);
+                    }
                 }
             }
         }

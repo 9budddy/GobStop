@@ -94,17 +94,17 @@ public class RespawnPlayer : MonoBehaviour
         else if (playerState.level == 8)
         {
 
-            //respawnPlayerPos = new Vector2(103.45f, -2.45f);
+            respawnPlayerPos = new Vector2(244.45f, -2.45f);
         }
         else if (playerState.level == 9)
         {
 
-            //respawnPlayerPos = new Vector2(103.45f, -2.45f);
+            respawnPlayerPos = new Vector2(291.45f, -2.45f);
         }
         else if (playerState.level == 10)
         {
 
-            //respawnPlayerPos = new Vector2(103.45f, -2.45f);
+            respawnPlayerPos = new Vector2(325.45f, -2.45f);
         }
 
         else

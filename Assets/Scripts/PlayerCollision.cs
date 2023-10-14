@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Playables;
@@ -9,6 +10,38 @@ public class PlayerCollision : MonoBehaviour
     [SerializeField] private PlayerState playerState;
     [SerializeField] private RespawnPlayer respawnPlayer;
     [SerializeField] private GameObject GobSpawner;
+    [SerializeField] private TextMeshProUGUI Isowwie;
+    [SerializeField] private GameObject image;
+    [SerializeField] private ItemSpawner itemSpawner;
+    [SerializeField] private GameObject[] gameObjects;
+    private float timer;
+
+    void Start()
+    {
+        foreach (GameObject game in gameObjects)
+        {
+            playerState.objects.Add(game);
+        }
+        playerState.image = false;
+        timer = 0.0f;
+    }
+
+    void Update()
+    {
+        if (playerState.image)
+        {
+            timer += Time.deltaTime;
+            image.SetActive(true);
+            Isowwie.enabled = true;
+            if (timer >= 5.0f)
+            {
+                image.SetActive(false);
+                timer = 0.0f;
+                Isowwie.enabled = false;
+                playerState.image = false;
+            }
+        }
+    }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -136,6 +169,19 @@ public class PlayerCollision : MonoBehaviour
 
                 AudioManager.instance.Play("purchase");
                 Destroy(collision.gameObject);
+            }
+            else if (playerState.level == 10 && playerState.coins == 10)
+            {
+                playerState.image = true;
+                setExtras(1);
+                itemSpawner.spawnCoins();
+                foreach(GameObject obj in playerState.objects)
+                {
+                    obj.SetActive(true);
+                }
+                AudioManager.instance.Play("purchase");
+                Destroy(collision.gameObject);
+                respawnPlayer.playerRespawn();
             }
         }
     }

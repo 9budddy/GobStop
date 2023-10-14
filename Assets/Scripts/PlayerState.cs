@@ -23,5 +23,7 @@ public class PlayerState : ScriptableObject
     public Vector3 WingsPosition { get; set; }
     public Vector3 BouncePosition { get; set; }
     public Vector3 GluePosition { get; set; }
+    public bool image { get; set; }
+    public List<GameObject> objects { get; set; }
 
 }

@@ -23,7 +23,7 @@ public class ItemSpawner : MonoBehaviour
         spawnCoins();
     }
 
-    private void spawnCoins()
+    public void spawnCoins()
     {
         foreach (Vector2 coin in coins)
         {
